@@ -9,42 +9,43 @@ console.log('localConfig.os');
 console.log(localConfig.os);
 
 var getFileList = require('../src/get_bat_file_list');
-if(localConfig.os === 'Linux'){
+if (localConfig.os === 'Linux') {
     getFileList = require('../src/get_sh_file_list');
 }
 
 var projectList = require('../src/project_list');
-
-console.log('projectList');
-console.log(projectList);
-
-
 
 /* get list of projects from folder ini */
 router.get('/:project_type/:project_id', function (req, res, next) {
 
     console.log('------------------------------');
     console.log('GET /:project_type/:project_id');
+    console.log('------------------------------');
 
     // console.log(projectList['0']);
     var projectId = req.params.project_id;
     var projectType = req.params.project_type;
 
+    console.log('projectList');
+    console.log(projectList);
 
     console.log('projectType');
     console.log(projectType);
 
     console.log('projectId');
     console.log(projectId);
+    console.log('projectList.projectType');
+    console.log(projectList[projectType]);
 
+    console.log('projectList.projectType.projectId');
+    console.log(projectList[projectType][projectId]);
 
     var projectVolume = projectList[projectType][projectId]['volume'];
-    console.log('projectVolume');
+    console.log('projectList.projectType.Volume');
     console.log(projectVolume);
 
-
     var project_path = projectVolume + projectList[projectType][projectId]['path'];
-    console.log('project_path');
+    console.log('projectList.projectType.Path');
     console.log(project_path);
 
     console.log('projectList[projectType]');

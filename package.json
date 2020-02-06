@@ -1,12 +1,12 @@
 {
-  "name": "promagen one",
+  "name": "promagen-one",
   "version": "1.0.1",
+  "description": "compilated version of express app",
+  "keywords": ["Project","Manager","Generator","Folder","WebUI","GUI","terminal","bash","shell","scripts"],
   "private": true,
   "scripts": {
-//    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ['compilated version of express app'],
   "main": "app.js",
   "dependencies": {
     "basic-auth": "^2.0.1",

@@ -1,7 +1,10 @@
 # one
 scripts for one project in one folder
 
+Start
 
+    node ./app.js
+    
 ## compiling code
 install
     
@@ -10,4 +13,5 @@ install
 compile
     
     nexe app.js
+    
     

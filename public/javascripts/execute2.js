@@ -31,7 +31,7 @@ function popup(that) {
         var qurl = qurl_base + Query;
         $(that).attr("href", qurl);
         $(that).text(Query);
-        $(that).data("query",Query);
+        $(that).data("query", Query);
 
         var qurl1 = $(that).attr("href");
         console.log(qurl1);
@@ -65,7 +65,11 @@ $(document).ready(function () {
     //your code here
     // $('.projects').load('projects');
 
-    $('.projects a').click(function (e) {
+    setTimeout(function () {
+        $('.project>a:first-child').trigger("click");
+    }, 200);
+
+    $('.project > a').click(function (e) {
         ie8SafePreventEvent(e);
         var url = $(this).attr('href');
         var path = $(this).text();
@@ -153,6 +157,10 @@ $(document).ready(function () {
                 domain = val.domain;
             });
 
+            // Clean the list before fill
+            $('.scripts').html('');
+
+
             // join items
             $.each(group, function (key, val) {
 
@@ -161,17 +169,19 @@ $(document).ready(function () {
                 }
                 first = false;
 
+                var header = '';
+                // header = "<h3 class='group_name'>" + key + "</h3>";
+
                 var object = $("<ul/>", {
                     "class": "commands",
-                    html: "<h3>" + key + "</h3>" + group[key].join("")
+                    html: header + group[key].join("")
                 }).appendTo('.scripts').find('a').click(function (e) {
                     ie8SafePreventEvent(e);
                     var url = $(this).attr('href');
                     var path = $(this).text();
                     var name = path.replace(/^.*[\\\/]/, '');
 
-                    $(".logs ul").append("<li>" + $(this).data("name") + " " + $(this).data("query") + "</li>");
-
+                    $(".logs ul").append("<li class='row'>" + $(this).data("name") + " " + $(this).data("query") + "</li>");
 
                     // $('.message').load(url);
 
@@ -224,5 +234,6 @@ $(document).ready(function () {
     });
 
     // $('.scripts a')
+
 
 });

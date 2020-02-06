@@ -5,6 +5,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const auth = require('./src/auth');
 
+const PublicConfig = require('./config');
+var localConfig = new PublicConfig();
+
 //var FileList = [];
 const indexRouter = require('./routes/index');
 const batRouter = require('./routes/bat');
@@ -36,8 +39,6 @@ app.use('/bat', batRouter);
 app.use('/project/', projectRouter);
 
 
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -54,4 +55,5 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+
+app.listen(localConfig.port);

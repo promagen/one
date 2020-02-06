@@ -10,3 +10,4 @@ install
 compile
     
     nexe app.js
+    

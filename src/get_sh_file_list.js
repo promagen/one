@@ -1,4 +1,4 @@
-var getBatFileList = function (path, callback) {
+var getShFileList = function (path, callback) {
     var fsPath = require('fs-path');
 
     fsPath.find(path, function (filepath, stats, filename) {
@@ -16,4 +16,4 @@ var getBatFileList = function (path, callback) {
     // return FileList;
 };
 
-module.exports = getBatFileList;
+module.exports = getShFileList;

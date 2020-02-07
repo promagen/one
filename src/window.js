@@ -5,6 +5,8 @@ module.exports = function () {
     const app = electron.app; // Module to control application life.
     const BrowserWindow = electron.BrowserWindow; // Module to create native browser window.
 
+
+
     const log = require('electron-log'); // the app to write to the console, as well as a file located at ~/Library/Logs/[productName]
     const path = require('path');
     const web = require('./web'); // Start Express web app based on Express
@@ -39,21 +41,23 @@ module.exports = function () {
     function createWindow() {
         // Create the browser window.
         const mainWindow = new BrowserWindow({
+            autoHideMenuBar: true,
             width: 1280,
             height: 720,
             // backgroundcolor: '#2e2c29',
             // autoHideMenuBar: true,
             // useContentSize: true,
-            title: productName
+            title: productName,
             // webPreferences: {
+            //     nodeIntegration: true
             //     preload: path.join(__dirname, 'public/electron/preload.js')
             // }
         });
 
         // log.info(mainWindow);
 
-        // var localurl = 'http://localhost:' + localConfig.port + '/';
-        var localurl = 'http://localhost:' + localConfig.port + '/electron/index.html';
+        var localurl = 'http://localhost:' + localConfig.port + '/';
+        // var localurl = 'http://localhost:' + localConfig.port + '/electron/index.html';
         // var localurl = url.format({
         //     // pathname: 'localhost:' + localConfig.port + '/electron/index.html',
         //     pathname: 'localhost:' + localConfig.port + '',
@@ -61,6 +65,7 @@ module.exports = function () {
         //     slashes: true
         // });
         console.log(localurl);
+
         var localfile = './public/electron/index.html';
         // localfile = path.join(__dirname, localfile);
         console.log(localfile);
@@ -77,6 +82,44 @@ module.exports = function () {
 
         // Open the DevTools.
         // mainWindow.webContents.openDevTools()
+
+        var Positioner = require('electron-positioner'); // https://github.com/jenslind/electron-positioner
+        var positioner = new Positioner(mainWindow)
+
+// Moves the window top right on the screen.
+        positioner.move('topRight')
+
+// Returns `{x,y}`
+//         positioner.calculate('trayCenter', trayBounds)
+
+        /*
+        A string telling where to place the window. Allowed values:
+
+            trayLeft
+        trayBottomLeft
+        trayRight
+        trayBottomRight
+        trayCenter
+        trayBottomCenter
+        topLeft
+        topRight
+        bottomLeft
+        bottomRight
+        topCenter
+        bottomCenter
+        leftCenter
+        rightCenter
+        center
+        trayBounds
+        Tray bounds, only needed for the following positions:
+
+            trayLeft
+        trayBottomLeft
+        trayRight
+        trayBottomRight
+        trayCenter
+        trayBottomCenter
+        */
     }
 
 

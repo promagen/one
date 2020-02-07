@@ -5,7 +5,7 @@ module.exports = function () {
     const path = require('path');  // https://nodejs.org/api/path.html
     const cookieParser = require('cookie-parser');
     const logger = require('morgan');
-    const auth = require('./auth');
+    //const auth = require('./auth');
 
 // CONFIG
     const PublicConfig = require('../config');
@@ -18,7 +18,6 @@ module.exports = function () {
     const projectRouter = require('../routes/project');
 
     const web = express();
-
 
     // ELECTRON z EXPRESS NIE UZYWA PROMPT
     //web.use(auth); // load athentication data for API,

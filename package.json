@@ -1,6 +1,6 @@
 {
   "name": "promagen-one",
-  "productName": "ProMaGen One",
+  "productName": "ProMaGenOne",
   "version": "1.0.1",
   "repository": "promagen/one",
   "homepage": "https://promagen.com",
@@ -30,7 +30,9 @@
   ],
   "private": true,
   "scripts": {
-    "electron-pack": "electron-builder -c.extraMetadata.main='./app.js'",
+    "electron": "electron .",
+    "dist": "electron-builder",
+    "electron-pack": "electron-builder -c.extraMetadata.main='./promagen.js'",
     "preelectron-pack": "npm run react-build && npm run server-build",
     "nexe": "nexe --build",
     "start": "electron .",
@@ -38,17 +40,16 @@
     "start4": ".\\node_modules\\node\\bin\\node.exe start-electron.js",
     "build1": "electron-builder -p --win",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder",
     "pack2": "electron-packager ./ one --all --out ~/Desktop/One --version 0.30.2 --overwrite --icon=./app/img/app-icon.icns",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "electron": "^8.0.0",
+    "electron-builder": "*",
     "electron-packager": "*",
-    "electron-builder": "^22.3.2",
     "nexe": "*"
   },
-  "main": "app.js",
+  "main": "promagen.js",
   "dependencies": {
     "app": "^0.1.0",
     "basic-auth": "^2.0.1",
@@ -74,8 +75,23 @@
     "appId": "com.electron.promagen-one",
     "target": "portable",
     "extraResources": "node_modules",
+    "compression": "normal",
+    "asar": true,
+    "extends": null,
     "files": [
-      "!node_modules"
-    ]
+      "promagen.js",
+      "build/**/*",
+      "node_modules/**/*",
+      "public/**/*",
+      "view/**/*",
+      "src/**/*",
+      "public/images/promagen32.png"
+    ],
+    "linux": {
+      "target": "zip"
+    },
+    "win": {
+      "target": "portable"
+    }
   }
 }

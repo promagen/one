@@ -6,8 +6,7 @@ module.exports = function () {
     const BrowserWindow = electron.BrowserWindow; // Module to create native browser window.
 
 
-
-    const log = require('electron-log'); // the app to write to the console, as well as a file located at ~/Library/Logs/[productName]
+    // const log = require('electron-log'); // the app to write to the console, as well as a file located at ~/Library/Logs/[productName]
     const path = require('path');
     const web = require('./web'); // Start Express web app based on Express
 // CONFIG
@@ -16,8 +15,8 @@ module.exports = function () {
 
 
 // Make sure to set the logging level to the
-    log.transports.console.level = 'info';
-    log.transports.file.level = 'info';
+//     log.transports.console.level = 'info';
+//     log.transports.file.level = 'info';
 
 // Helpers
     const os = require('os');
@@ -52,6 +51,7 @@ module.exports = function () {
             //     nodeIntegration: true
             //     preload: path.join(__dirname, 'public/electron/preload.js')
             // }
+            icon: path.join(__dirname, "./public/images/promagen32.png")
         });
 
         // log.info(mainWindow);
@@ -83,11 +83,10 @@ module.exports = function () {
         // Open the DevTools.
         // mainWindow.webContents.openDevTools()
 
-        var Positioner = require('electron-positioner'); // https://github.com/jenslind/electron-positioner
-        var positioner = new Positioner(mainWindow)
-
+        // var Positioner = require('electron-positioner'); // https://github.com/jenslind/electron-positioner
+        // var positioner = new Positioner(mainWindow);
 // Moves the window top right on the screen.
-        positioner.move('topRight')
+//         positioner.move('topRight');
 
 // Returns `{x,y}`
 //         positioner.calculate('trayCenter', trayBounds)
@@ -141,7 +140,7 @@ module.exports = function () {
 
 // Called before quitting...gives us an opportunity to shutdown the child process
     app.on('before-quit', function () {
-        log.info('gracefully shutting down...');
+        // log.info('gracefully shutting down...');
 
         // Need this to make sure we don't kick things off again in the child process
         shuttingDown = true;
@@ -161,7 +160,7 @@ module.exports = function () {
 
     process.on("SIGINT", function () {
         //graceful shutdown
-        log.info('shutting down...');
+        // log.info('shutting down...');
         process.exit();
     });
 

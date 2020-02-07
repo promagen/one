@@ -1,5 +1,5 @@
 const auth = require('basic-auth');
-const admins = require('../users');
+const admins = require('./users');
 
 module.exports = function (request, response, next) {
     var user = auth(request);

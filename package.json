@@ -79,11 +79,14 @@
     "asar": true,
     "extends": null,
     "files": [
+      "users.js",
+      "config.js",
       "promagen.js",
+      "routes/**/*",
+      "views/**/*",
       "build/**/*",
       "node_modules/**/*",
       "public/**/*",
-      "view/**/*",
       "src/**/*",
       "public/images/promagen32.png"
     ],

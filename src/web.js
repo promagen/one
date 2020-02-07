@@ -56,7 +56,8 @@ module.exports = function () {
 
         // render the error page
         res.status(err.status || 500);
-        res.render('error');
+        var title = err.status;
+        res.render('error', {title: title});
     });
 
     web.listen(localConfig.port);

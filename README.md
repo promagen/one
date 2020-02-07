@@ -86,6 +86,12 @@ https://github.com/electron/simple-samples/blob/master/prices/package.json
 
     npm i -g electron-builder
 
+remove files
+
+    rm dist
+
+generate
+
     npm run dist
 
 

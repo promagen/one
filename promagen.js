@@ -23,6 +23,8 @@ function startExpress() {
 }
 
 function createWindow() {
+    var icon_file = path.join(__dirname, "/public/images/promagen32.png");
+    console.log('icon_file:', icon_file);
     // Create the browser window.
     const mainWindow = new BrowserWindow({
         autoHideMenuBar: true,
@@ -36,27 +38,18 @@ function createWindow() {
         //     nodeIntegration: true
         //     preload: path.join(__dirname, 'public/electron/preload.js')
         // }
-        icon: path.join(__dirname, "./public/images/promagen32.png")
+        icon: icon_file
     });
 
-    // log.info(mainWindow);
-
-    var localurl = 'http://localhost:' + localConfig.port + '/';
-    // var localurl = 'http://localhost:' + localConfig.port + '/electron/index.html';
-    // var localurl = url.format({
-    //     // pathname: 'localhost:' + localConfig.port + '/electron/index.html',
-    //     pathname: 'localhost:' + localConfig.port + '',
-    //     protocol: 'http:',
-    //     slashes: true
-    // });
-    console.log(localurl);
+    // var localurl = 'http://localhost:' + localConfig.port + '/';
+    // console.log(localurl);
+    // mainWindow.loadURL(localurl);
 
     var localfile = './public/electron/index.html';
-    // localfile = path.join(__dirname, localfile);
     console.log(localfile);
-
-    // mainWindow.loadURL(localurl);
     mainWindow.loadFile(localfile);
+
+    mainWindow.webContents.openDevTools();
 
 }
 

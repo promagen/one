@@ -1,7 +1,12 @@
+const fsPath = require('fs-path');
+
 var getBatFileList = function (path, callback) {
-    var fsPath = require('fs-path');
+
+    console.log('getBatFileList.path:', path);
 
     fsPath.find(path, function (filepath, stats, filename) {
+        console.log('getBatFileList.path:', filename);
+
         if (stats === 'file' && /\.bat/.test(filename)) {
             // console.log(filename);
             return true;

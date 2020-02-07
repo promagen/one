@@ -1,6 +1,8 @@
 {
   "name": "promagen-one",
+  "productName": "ProMaGen One",
   "version": "1.0.1",
+  "repository": "promagen/one",
   "description": "compilated version of express app",
   "keywords": [
     "Project",
@@ -16,22 +18,36 @@
   ],
   "private": true,
   "scripts": {
+    "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "electron": "^8.0.0"
   },
   "main": "app.js",
   "dependencies": {
+    "app": "^0.1.0",
     "basic-auth": "^2.0.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "electron-log": "^4.0.6",
     "express": "~4.16.0",
     "fs-path": "0.0.24",
     "http-errors": "~1.6.2",
     "ini": "^1.3.5",
+    "linebyline": "^1.3.0",
     "morgan": "~1.9.0",
     "nexe": "^3.3.2",
     "opn": "^5.3.0",
     "os-homedir": "^1.0.2",
+    "papaparse": "^4.6.0",
     "pug": "^2.0.4",
     "shelljs": "^0.8.2"
+  },
+  "build": {
+    "extraResources": "node_modules",
+    "files": [
+      "!node_modules"
+    ]
   }
 }

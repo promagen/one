@@ -50,9 +50,9 @@ function RunCmd(filename, res) {
     }
     try {
 
-        var version = exec('node --version', {silent: true}).stdout;
-        console.log(version);
-
+        // var version = exec('node --version', {silent: true}).stdout;
+        // var version = exec('node --version', {silent: true});
+        // console.log(version);
         // var child = exec(command, {async:true});
         // child.stdout.on('data', function(data) {
         //     /* ... do something with data ... */

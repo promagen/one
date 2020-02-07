@@ -36,19 +36,19 @@ Install on linux
 
 Install on windows
 
+    npm install
 
 Node on linux
 
     sudo npm install -g npm
     
-    
-    sudo npm install -g npm
-
 Start
 
     node ./app.js
 
-## compiling code
+## compiling code with nexe
+https://github.com/nexe/nexe
+
 install
 
     npm i nexe -g
@@ -59,3 +59,20 @@ compile
 
     nexe app.js
 
+## Electron
+https://github.com/electron/simple-samples/blob/master/prices/package.json
+
+    npm i -g electron-builder
+    
+    
+    
+## NW JS
+
+    npm install -g nw
+    
+### NW examples
+https://github.com/zcbenz/nw-sample-apps/tree/master/file-explorer
+
+## elctron logs
+    
+    npm i electron-log        

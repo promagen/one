@@ -1,9 +1,14 @@
+const fsPath = require('fs-path');
+
 var getShFileList = function (path, callback) {
-    var fsPath = require('fs-path');
+
+    console.log('getShFileList.path:', path);
 
     fsPath.find(path, function (filepath, stats, filename) {
+        console.log('getShFileList.filename:', filename);
+        // console.log();
+
         if (stats === 'file' && /\.sh/.test(filename)) {
-            // console.log(filename);
             return true;
         }
         return false;

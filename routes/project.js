@@ -51,7 +51,6 @@ router.get('/:project_type/:project_id', function (req, res, next) {
     console.log('projectList[projectType]');
     console.log(projectList[projectType]);
 
-    console.log('getBatFileList');
     getFileList(project_path, function (FileList) {
         // console.log(FileList);
         var fList = [];

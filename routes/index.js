@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 // var projectList = [];
 var projectList = require('../src/project_list');
-var title = 'Docker Manager Linux';
+var title = 'ProMaGen One';
 
 /* GET home page. */
 router.get('/', function (req, res, next) {

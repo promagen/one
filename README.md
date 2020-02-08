@@ -50,9 +50,11 @@ Start
 ## compiling code with nexe
 https://github.com/nexe/nexe
 
-install
-
+## install nexe
+win
     npm i nexe -g
+
+linux
 
     sudo npm i nexe -g
 
@@ -66,6 +68,12 @@ compile
     nexe .\promagen.js --build -o promagen.exe --verbose
 
 
+## Alternative
+
+https://github.com/frankhale/electron-with-express
+
+
+
 ## Wix toolset
 https://github.com/wixtoolset
 https://github.com/wixtoolset/wix3/releases/tag/wix3112rtm
@@ -76,7 +84,7 @@ https://github.com/wixtoolset/wix3/releases/tag/wix3112rtm
 download:
 https://www.nasm.us/pub/nasm/releasebuilds/2.14rc16/win64/nasm-2.14rc16-installer-x64.exe
 
-    start /wait nasm.exe /S
+    start /wait nasm.exe /Spython
     ps: $env:path="C:\Program Files\nasm;$($env:path)"
 
 ## Electron
@@ -157,19 +165,33 @@ run in powershell
 
     npm install --global windows-build-tools
 
+## About processes
+https://nodejs.org/api/child_process.html
+
+
 
 ## ProMaGen
-versions:
+
+### based on npm versions:
+
 + desktop: local with nexe and electron window
     + express
     + electron
+    + nexe / ...
+
 + server: only express service, works on external domain
     + express
-    + nexe
+    + node js service
+
+### based on java versions:
++ desktop:
+    + JVM
+
++ server:
+    + .jar service on tomcat
+
 + mobile: server + optimisation for mobile devices
     + express
     + nexe
     + https://github.com/Urucas/slideout
 
-## About processes
-https://nodejs.org/api/child_process.html

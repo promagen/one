@@ -1,7 +1,57 @@
 # ProMaGen ONE
+scripts for one project in one folder
 https://github.com/promagen/one.git
 
-scripts for one project in one folder
+Main Website Documentation
+https://promagen.com/
+
+
+Blog: News, Updates
+https://blog.promagen.com/
+
+
+
+## Why ProMaGen
++ wspiera budowanie aplikacji i kontrole środowiska od strony tworzenia procesów
+    + Dane, baza danych
+        + migracja danych
+        + aktualizacja
+        + restowanie
+        + zamian haseł użytkowników
+    + Software Development, aplikacja z projektu
+        + aktualizacja bibliotek
+        + git: github
+        + packages: composer, npmjs
+
+    + Marketing, publikowanie informacji o zmianach, aktualizacjach
+        + blogi: wordpress
+        + social media: twotter
+        + ...
+
+
+## Versions
+
+    [platform]-[interface]-[language]
+
++ platform:
+    + (all)
+    + win
+    + linux
+    + ios
+    + android
+
++ interface
+    + restapi
+    + gui
+
++ language:
+    + nodejs
+    + python
+    + go
+
+
+
+
 
 Start BIN
 ## Linux
@@ -195,3 +245,12 @@ https://nodejs.org/api/child_process.html
     + nexe
     + https://github.com/Urucas/slideout
 
+
+## Alternatives for electron
+https://www.phoronix.com/scan.php?page=news_item&px=HTML5-Golang-Desktop-Apps
+The Electron software framework that allows creating desktop GUI application interfaces using JavaScript and relies upon a bundled Chromium+Node.js run-time is notorious among most Linux desktop users for being resource heavy, not integrating well with most desktops, and generally being despised. For those that are fond of using web standards for creating desktop GUIs, now there is a way to create desktop application front-ends using HTML5 and Golang but with less baggage.
+
+## The Way, Solutions
+https://xpda.net/
+Cross-Platform Desktop Apps (XPDA)
+Write Once Run Anywhere (WORA) development for desktop operating systems.

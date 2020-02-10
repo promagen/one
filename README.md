@@ -254,3 +254,11 @@ The Electron software framework that allows creating desktop GUI application int
 https://xpda.net/
 Cross-Platform Desktop Apps (XPDA)
 Write Once Run Anywhere (WORA) development for desktop operating systems.
+
+
+# The integration with Apicra
+https://github.com/apicra
+
+for example:
+
+    .apicra\-project-create.bat "tom-sapletta-com" "apicra/win-python"

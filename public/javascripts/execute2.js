@@ -1,6 +1,12 @@
+// CONFIG
+const PromptButton = false;
+const LoginPopup = true;
+
+// Controll all events on DOM
 function ie8SafePreventEvent(e) {
     e.preventDefault() || (e.returnValue = false) || e.stopPropagation();
 }
+
 
 //
 // $("a.popup").on("click", function (e) {
@@ -56,9 +62,13 @@ function popup(that) {
 }
 
 function getPromptButton(batq) {
-    return "<button>"
-        + "<a class='prompt' onclick='popup(this)' href='" + batq.url + "'  data-name='" + batq.name + "' data-query='" + batq.Query + "' >" + batq.title + "</a>"
-        + "</button>";
+    // console.log('PromptButton', PromptButton);
+    if (has(PromptButton)) {
+        return "<button>"
+            + "<a class='prompt' onclick='popup(this)' href='" + batq.url + "'  data-name='" + batq.name + "' data-query='" + batq.Query + "' >" + batq.title + "</a>"
+            + "</button>";
+    }
+    return '';
 }
 
 $(document).ready(function () {
@@ -127,6 +137,7 @@ $(document).ready(function () {
                     url: val.url + '/q/' + '',
                     title: title
                 };
+
 
                 item = "<li class='inline' id='menu_" + key + "'>"
                     // + val.path_dir

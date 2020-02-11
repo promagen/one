@@ -1,10 +1,13 @@
 const express = require('express');
 var router = express.Router();
 var projectList = require('../src/project_list');
-var RunCmd = require('../src/run_cmd');
-var RunCmdPar = require('../src/run_cmd_par');
+const Run = require('../src/run');
+const RunCmd = require('../src/run_cmd');
+const RunCmdPar = require('../src/run_cmd_par');
 const PublicConfig = require('../config');
 var localConfig = new PublicConfig();
+
+
 
 console.log('localConfig.os');
 console.log(localConfig.os);
@@ -67,6 +70,8 @@ router.get('/p/:project_type/:project_id/:file_id/q/:query', function (req, res,
 
             if (index == fileId) {
                 RunCmdPar(filename, query, res);
+                // let RunCommand = new Run();
+                // RunCommand
             }
         });
     });

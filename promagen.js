@@ -48,8 +48,7 @@ function createWindow() {
     var localfile = './public/electron/index.html';
     console.log(localfile);
     mainWindow.loadFile(localfile);
-
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 
 }
 

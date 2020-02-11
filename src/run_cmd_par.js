@@ -63,16 +63,13 @@ function RunCmdPar(filename, query, res) {
             console.log('Program output:', stdout);
             console.log('Program stderr:', stderr);
 
-            code = '<span style="color: gray">' + code + '</span>' + '<br/>';
+            var message = '<br/>'
+                + Formatting(code).coloring('gray').getText()
+                + Formatting(stdout).cleaning().coloring('darkblue').getText()
+                + Formatting(stderr).cleaning().coloring('darkred').getText()
+                + '<br/>';
 
-            stdout = stdout.replace(/\r\n|\r|\n/, '<br/>');
-            stdout = '<span style="color: darkblue">' + stdout + '</span>' + '<br/>';
-
-            stderr = stderr.replace(/\r\n|\r|\n/, '<br/>');
-            stderr = '<span style="color: darkred">' + stderr + '</span>' + '<br/>';
-
-            return res.send('<br/>' + code + stdout + stderr + '<br/>');
-            // return res.json(Query);
+            res.send(message);
 
         });
 

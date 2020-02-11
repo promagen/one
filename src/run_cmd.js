@@ -1,5 +1,6 @@
 const path = require('path');
 require('shelljs/global');
+const Formatting = require('../src/formatting');
 
 // http://adilapapaya.com/docs/shelljs/
 // https://documentup.com/shelljs/shelljs
@@ -60,22 +61,18 @@ function RunCmd(filename, res) {
 
         exec(command, function (code, stdout, stderr) {
             console.log('Exit code:', code);
-
             // For admins role : 3001
             console.log('Program output:', stdout);
-
             // User Role, show the Errors :3002
             console.log('Program stderr:', stderr);
 
-            code = '<span style="color: gray">' + code + '</span>' + '<br/>';
+            var message = '<br/>'
+                + Formatting(code).coloring('gray').getText()
+                + Formatting(stdout).cleaning().coloring('darkblue').getText()
+                + Formatting(stderr).cleaning().coloring('darkred').getText()
+                + '<br/>';
 
-            stdout = stdout.replace(/\r\n|\r|\n/, '<br/>');
-            stdout = '<span style="color: darkblue">' + stdout + '</span>' + '<br/>';
-
-            stderr = stderr.replace(/\r\n|\r|\n/, '<br/>');
-            stderr = '<span style="color: darkred">' + stderr + '</span>' + '<br/>';
-
-            res.send('<br/>' + code + stdout + stderr + '<br/>');
+            res.send(message);
         });
 
         // // stdout = exec( command, configs ).stdout;

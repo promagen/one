@@ -1,9 +1,15 @@
 var NwBuilder = require('nw-builder');
 var nw = new NwBuilder({
     // files: './path/to/nwfiles/**/**', // use the glob format
-    files: ' F:\\WebstormProjects\\promagen-one\\nwfiles\\**\\**', // use the glob format
-    platforms: ['osx64', 'win32', 'win64'],
-    version: '0.14.6'
+    // files: ' F:\\WebstormProjects\\promagen-one\\nwfiles\\**\\**', // use the glob format
+    files: ['./app/**'],
+    platforms: [
+        // 'osx64',
+        // 'win32',
+        // 'win64',
+        'linux64'
+    ],
+    version: '0.17.5'
 });
 
 // Log stuff you want

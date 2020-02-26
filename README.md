@@ -9,6 +9,8 @@ https://promagen.com/
 Blog: News, Updates
 https://blog.promagen.com/
 
+softreck.net
+ionos
 
 
 ## Why ProMaGen
@@ -28,19 +30,26 @@ https://blog.promagen.com/
         + social media: twotter
         + ...
 
+W przypaku uzycia wersji standalone
 
 ## Versions
 
     [platform]-[interface]-[language]
 
 + platform:
+    + server
+    + client
+    + standalone
+        + independent, without network connection, offline version
+
++ os:
     + (all)
     + win
     + linux
     + ios
     + android
 
-+ interface
++ interface:
     + restapi
     + gui
 
@@ -187,16 +196,56 @@ stworzenie instalatora w folderze dist
 
     npm i electron-log
 
-### Elctron with boxedapp
+### Electron with boxedapp
 https://www.boxedapp.com/boxedapppacker/usecases/pack_node_webkit_app_into_single_exe.html
 
 
+
+## Carlo
+https://github.com/GoogleChromeLabs/carlo
+
+This will allow you to launch the locally installed Chrome as a shell that can connect to a locally running server application. It does require a local chrome, but is very close to what was asked for.
+
+The approach encouraged by Carlo should be well suited for Progressive Web Apps. Developers looking for full capabilities for desktop applications are likely to continue leveraging Electron.
+
+Electron is the current leader in providing tools for creating desktop applications with web technologies. In contrast to Electron, Carlo does not attempt to bundle a specific version of Chrome and Node.js together, but instead relies on whichever version of Chrome is installed on an end user's computer.
+
+Carlo does not provide capabilities for making true desktop application alternatives such as changing the name, menu, or icon of the browser view. Instead, Carlo is more akin to running an application in a local application server and automating the viewing of that application within Chrome.
+
+
 ## NW JS
+The gist is that it basically extends the JS engine for you to write a web-based app supporting node's extended object model, and modules... you then package your package.json start.html modules and js files into a zip (with the .nw extension) and run it with nw(.exe) .. there are windows, mac and linux builds available.
 
     npm install -g nw
 
 ### NW examples
 https://github.com/zcbenz/nw-sample-apps/tree/master/file-explorer
+
+
+## nodebob, NW EXE
+
+Install
+
+    git clone https://github.com/geo8bit/nodebob.git nodebob
+
+Execute
+
+    nodebob/build.bat
+
+    .\nodebob\build.bat
+
+
+## nw-builder
+https://github.com/nwjs-community/nw-builder
+
+    npm install nw-builder -g
+
+During development you can run NW.js with nwbuild -r path/to/your/younwapp/
+
+    nwbuild -r .
+    nwbuild -r F:\\WebstormProjects\\nw-sample-apps\\webgl
+
+
 
 ## Shell execute file
 https://ourcodeworld.com/articles/read/154/how-to-execute-an-exe-file-system-application-using-electron-framework
@@ -250,10 +299,39 @@ https://nodejs.org/api/child_process.html
 https://www.phoronix.com/scan.php?page=news_item&px=HTML5-Golang-Desktop-Apps
 The Electron software framework that allows creating desktop GUI application interfaces using JavaScript and relies upon a bundled Chromium+Node.js run-time is notorious among most Linux desktop users for being resource heavy, not integrating well with most desktops, and generally being despised. For those that are fond of using web standards for creating desktop GUIs, now there is a way to create desktop application front-ends using HTML5 and Golang but with less baggage.
 
+## lorca
+https://archive.fosdem.org/2019/schedule/event/godesktopapps/attachments/slides/2994/export/events/attachments/godesktopapps/slides/2994/slides.pdf
+https://ftp.fau.de/fosdem/2019/UD2.120/godesktopapps.webm
+
+https://github.com/zserge/lorca
+https://github.com/zserge/webview
+
+Lorca
++ Chrome DevTools Protocol
++ Bind Go functions to JS
++ Call JS from Go
++ Control native window
+
+## Webview
+github.com/zserge/webview
+Webview is now being rewritten from scratch, with the support of EdgeHTML
+
+
 ## The Way, Solutions
 https://xpda.net/
 Cross-Platform Desktop Apps (XPDA)
 Write Once Run Anywhere (WORA) development for desktop operating systems.
+
+
+# Push notification
+
+https://morioh.com/p/ba5c0f01e4ef
+
+Code:
+https://github.com/bradtraversy/node_push_notifications
+
+Webpush Repo:
+https://github.com/web-push-libs/web-push
 
 
 # The integration with Apicra

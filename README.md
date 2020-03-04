@@ -203,6 +203,32 @@ https://www.boxedapp.com/boxedapppacker/usecases/pack_node_webkit_app_into_singl
 
 
 
+
+# Pack the Files with BoxedApp
+https://www.boxedapp.com/boxedapppacker/usecases/pack_electron_app_into_single_exe.html
+![https://www.boxedapp.com/assets/img/usecases/pack_electron_app_into_single_exe/input_is_electron_exe.png](https://www.boxedapp.com/assets/img/usecases/pack_electron_app_into_single_exe/input_is_electron_exe.png)
+
+Download BoxedApp Packer and run it. Select electron.exe as the input exe and specify the output exe path as you want (you can change the output name).
+
+As you know, one needs to pass the folder name of the electron app to electron.exe in order to run it:
+
+    > electron.exe file-explorer
+
+That's why one should also click "Override command line" and then type:
+
+    <BoxedAppVar:OldCmdLine> file-explorer
+
+on the screen that appears. It means then when someone runs the output exe, it runs it as if "file-explorer" was passed as an argument.
+
+Click Application Directory, then click Add Files..., select all the electron binaries (except electron.exe), and add them.
+
+Then click Import Directory... and first select "file-explorer" and then "locales" and, finally, "resources".
+
+Build it and run. It works!
+
+
+
+
 ## Carlo
 https://github.com/GoogleChromeLabs/carlo
 

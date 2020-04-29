@@ -1,5 +1,6 @@
-
 ## NW JS
+https://nwjs.readthedocs.io/en/latest/For%20Users/Getting%20Started/#example-3-using-nodejs-api
+
 The gist is that it basically extends the JS engine for you to write a web-based app supporting node's extended object model, and modules... you then package your package.json start.html modules and js files into a zip (with the .nw extension) and run it with nw(.exe) .. there are windows, mac and linux builds available.
 
     npm install -g nw

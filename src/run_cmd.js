@@ -5,6 +5,7 @@ const Formatting = require('../src/formatting');
 // http://adilapapaya.com/docs/shelljs/
 // https://documentup.com/shelljs/shelljs
 
+// Go One Folder before current Path
 if (cd('../').code !== 0) {
     echo('Error: Change DIR failed');
     exit(1);

@@ -1,11 +1,12 @@
-const path = require('path');
 require('shelljs/global');
+const path = require('path');
 const Formatting = require('../src/formatting');
 
 // http://adilapapaya.com/docs/shelljs/
 // https://documentup.com/shelljs/shelljs
 
-function RunCmd(filename, res) {
+
+function RunCmd(filename, dir, localConfig, res) {
     var info = '';
     // var spawn = require('child_process').spawn,
     //     ls = spawn('cmd.exe', ['/c', filename]);
@@ -13,7 +14,6 @@ function RunCmd(filename, res) {
     // var name = filename.replace(/^.*[\\\/]/, '');
 
     //path.basename('/foo/bar/baz/asdf/quux.html')
-    var dir = path.dirname(filename);
 
     if (!which('docker')) {
         info = 'Sorry, this script requires DOCKER';
@@ -30,41 +30,21 @@ function RunCmd(filename, res) {
     }
 
     var stdout = '';
-
-    // var partition = 'e:';
-    // var command = 'cd ' + dir + ' && ' + filename;
-    // var command = 'bash ' + filename;
-    var command = filename;
-
-    console.log('command');
-    console.log(command);
-
-    // var configs = {};
-    // var configs = {silent:true,async:false};
-
-    console.log('dir');
-    console.log(dir);
-
-    if (cd(dir).code !== 0) {
-        echo('Error: Change DIR failed');
-        exit(1);
+    if(dir.length > 1){
+        dir = dir + path.sep;
     }
+    var command = dir + filename;
+
+    console.log('RunCmd(). command:', command);
+
+
     try {
-
-        // var version = exec('node --version', {silent: true}).stdout;
-        // var version = exec('node --version', {silent: true});
-        // console.log(version);
-        // var child = exec(command, {async:true});
-        // child.stdout.on('data', function(data) {
-        //     /* ... do something with data ... */
-        // });
-
         exec(command, function (code, stdout, stderr) {
-            console.log('Exit code:', code);
+            console.log('RunCmd(). Exit code:', code);
             // For admins role : 3001
-            console.log('Program output:', stdout);
+            console.log('RunCmd(). Program output:', stdout);
             // User Role, show the Errors :3002
-            console.log('Program stderr:', stderr);
+            console.log('RunCmd(). Program stderr:', stderr);
 
             var message = '<br/>'
                 + Formatting(code).coloring('gray').getText()
@@ -80,7 +60,7 @@ function RunCmd(filename, res) {
         //     echo('Error: Script failed');
         //     exit(1);
         // }
-        echo('--------------------------------------------------------');
+        echo('RunCmd(). --------------------------------------------------------');
     } catch (err) {
         stdout = err.stack;
         // ^ will output the "unexpected" result of: elsewhere has failed

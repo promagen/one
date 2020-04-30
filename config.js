@@ -2,22 +2,31 @@ const osHomedir = require('os-homedir');
 const os = require('os');
 const os_name = os.type();
 
-var project_path = './';
+// var project_path = '../';
 //project_path = project_path.replace(/^~/, osHomedir());
 // if(os_name === 'Linux'){
 //     project_path = '/home/tomaszsapletta/devops-gui-projects';
 // }
 
 // project_path = 'C:\\WebstormProjects\\one';
-console.log('project_path');
-console.log(project_path);
+// console.log('config.js project_path:', project_path);
+console.log('config.js dirname:', __dirname);
+
 
 module.exports = function () {
+
+    // var dir= '../'
+    // if (cd(dir).code !== 0) {
+    //     echo('Error: Change DIR failed');
+    //     exit(1);
+    // }
+
     return {
 
         username: 'tomaszsapletta',
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        project_path: project_path,
+        // project_path: project_path,
+
         // web server port
         port: 3001,
 
@@ -27,13 +36,16 @@ module.exports = function () {
 
         // SYSTEM OS
         os: os_name,
+        // dir_separator: os_name,
+        isCd: false,
 
+        // TODO, path generator, for each path or each folder in one step less
         projectListPrivate: [
             {
             'url': 'project/private/' + 0,
             'title': 'Current Folder',
             'volume': '',
-            'path': './',
+            'path': '../',
             'domain': 'localhost',
             'files': []
         }]

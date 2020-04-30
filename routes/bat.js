@@ -6,6 +6,7 @@ const RunCmd = require('../src/run_cmd');
 const RunCmdPar = require('../src/run_cmd_par');
 const PublicConfig = require('../config');
 var localConfig = new PublicConfig();
+const path = require('path');
 
 
 
@@ -25,29 +26,22 @@ router.get('/p/:project_type/:project_id/:file_id/q/:query', function (req, res,
     console.log('GET /p/:project_type/:project_id/:file_id/q/:query');
 
     var query = req.params.query;
-    console.log('Query');
-    console.log(query);
-
+    console.log('RunCmdPar.Query: ', query);
 
     var projectType = req.params.project_type;
-    console.log('projectType');
-    console.log(projectType);
+    console.log('RunCmdPar.projectType: ', projectType);
 
 
     var projectId = req.params.project_id;
-    console.log('projectId');
-    console.log(projectId);
-
+    console.log('RunCmdPar.projectId: ', projectId);
 
     //TODO: Should be an int
     var fileId = req.params.file_id;
-    console.log('fileId');
-    console.log(fileId);
+    console.log('RunCmdPar.fileId: ', fileId);
 
 
     var projectVolume = projectList[projectType][projectId]['volume'];
-    console.log('projectVolume');
-    console.log(projectVolume);
+    console.log('RunCmdPar.projectVolume: ', projectVolume);
 
 
     var project_path = projectVolume + projectList[projectType][projectId]['path'];
@@ -85,46 +79,47 @@ router.get('/p/:project_type/:project_id/:file_id', function (req, res, next) {
     console.log('GET /p/:project_type/:project_id/:file_id');
 
     var projectType = req.params.project_type;
-    console.log('projectType');
-    console.log(projectType);
+    console.log('RunCmd. projectType:', projectType);
 
 
     var projectId = req.params.project_id;
-    console.log('projectId');
-    console.log(projectId);
-
+    console.log('RunCmd. projectId: ', projectId);
 
     //TODO: Should be an int
     var fileId = req.params.file_id;
-    console.log('fileId');
-    console.log(fileId);
+    console.log('RunCmd. fileId: ', fileId);
 
 
     var projectVolume = projectList[projectType][projectId]['volume'];
-    console.log('projectVolume');
-    console.log(projectVolume);
+    console.log('RunCmd. projectVolume: ', projectVolume);
 
 
     var project_path = projectVolume + projectList[projectType][projectId]['path'];
+    console.log('RunCmd. project_path: ', project_path);
+    // var dir = path.dirname(filename);
 
-    console.log('project_path');
-    console.log(project_path);
 
     getFileList(project_path, function (FileList) {
-        console.log(FileList);
+        console.log('RunCmd. FileList:', FileList);
 
         FileList.forEach(function (filename, index) {
 
-            // TODO: create filelogs
-            console.log('filename');
-            console.log(filename);
+            var dirname = path.dirname(filename);
+            var basename = path.basename(filename);
 
-            console.log(fileId);
-            console.log(index);
+
+
+            console.log('RunCmd. FileList. basename:', basename);
+            console.log('RunCmd. FileList. dirname:', dirname);
+            console.log('RunCmd. FileList. filename:', filename);
+            console.log('RunCmd. FileList. fileId:',fileId);
+            console.log('RunCmd. FileList. index:',index);
             console.log(index == fileId);
 
             if (index == fileId) {
-                RunCmd(filename, res);
+                // RunCmd(filename, dir, res);
+                RunCmd(basename, dirname, localConfig, res);
+                localConfig.isCd = true;
             }
         });
     });

@@ -34,10 +34,11 @@ function RunCmd(filename, dir, localConfig, res) {
     }
 
     var stdout = '';
-    if(dir.length > 1){
-        dir = dir + path.sep;
-    }
-    var command = dir + filename;
+    // if(dir.length > 1){
+    //     dir = dir + path.sep;
+    // }
+    // var command = dir + filename;
+    var command = filename;
 
     console.log('RunCmd(). command:', command);
 

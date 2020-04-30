@@ -5,6 +5,10 @@ const Formatting = require('../src/formatting');
 // http://adilapapaya.com/docs/shelljs/
 // https://documentup.com/shelljs/shelljs
 
+if (cd('../').code !== 0) {
+    echo('Error: Change DIR failed');
+    exit(1);
+}
 
 function RunCmd(filename, dir, localConfig, res) {
     var info = '';

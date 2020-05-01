@@ -5,14 +5,12 @@ https://github.com/promagen/one.git
     git clone https://github.com/promagen/one.git one
 
 Main Website Documentation
-https://promagen.com/
+https://docs.promagen.com/
 
 
 Blog: News, Updates
 https://blog.promagen.com/
 
-softreck.net
-ionos
 
 
 ## Why ProMaGen
@@ -63,6 +61,16 @@ W przypaku uzycia wersji standalone
 
 
 
+## TODO
+preparing ProMaGen as library on npmjs
+and submodules as library to import for:
+
++ one / multi
+    + server
+    + desktop (electron)
+
+Creating Python version of library and service API
+based on FastAPI + frontend on vue, or simple JS with jLoads
 
 Start BIN
 ## Linux

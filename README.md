@@ -61,7 +61,19 @@ W przypaku uzycia wersji standalone
 
 
 
-## TODO
+## TODO a ecosystem
+
+
+USE APIbuild based on APIunit definition create enironment by APIcra scripts
+
++ APIbuild, runner is executing APIcra based on APIunit definition
++ APIunit, definition of application and environment
++ APIcra, scripts to create enironment for app
+
++ promagen is UI for APIBbuild
+
+It's a background for a APicra Runner preparation with own UI
+
 preparing ProMaGen as library on npmjs
 and submodules as library to import for:
 
@@ -69,10 +81,23 @@ and submodules as library to import for:
     + server
     + desktop (electron)
 
-Creating Python version of library and service API
-based on FastAPI + frontend on vue, or simple JS with jLoads
++ Create Python version of library and service API, based on FastAPI + frontend on vue, or simple JS with jLoads
+  + API models
+  + Requests
+    + list of projects
+    + list of files in project folder
+    + execute script
+    + get result
+    + get list of history commands
+    + credentials and auth
 
-Start BIN
++ Create SDK based on OpenAPI for many languages to call it by API
++ Create Vue JS application and Jquery/JS app on frontend to use APIwith SDK generated from OpenApi
+
+
+
+
+
 ## Linux
 copy the executable file from /bin folder to another, your project folder and execute
 

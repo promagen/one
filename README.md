@@ -81,14 +81,22 @@ USE APIbuild based on APIunit definition create enironment by APIcra scripts
   + dev/test
   + production
 
+
 + APIcra, scripts to create enironment for app
     + many different standarisated libraries of shell scripts to create/remove environment
 
-+ ProMaGen is UI for APIBbuild, based on manual, or for admins, hi leel management
+
++ ProMaGen is UI for APIbuild, based on manual, or for admins, hi leel management
   + nodejs
   + python
   + js
 
+
+vodAPI
++ api ecosystem
+
+vodAPP
++ cloud for app
 
 
 Now is possible to executing directly scripts from apicra by promagen, but we need runner and definition to say, what the server

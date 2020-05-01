@@ -67,10 +67,33 @@ W przypaku uzycia wersji standalone
 USE APIbuild based on APIunit definition create enironment by APIcra scripts
 
 + APIbuild, runner is executing APIcra based on APIunit definition
-+ APIunit, definition of application and environment
-+ APIcra, scripts to create enironment for app
+  + is using scripts to execute commands by ProMaGen library
+  + based on
+    + python
+    + fastapi openapi
+    + generated sdk
+    + documentation
+  + docs
 
-+ promagen is UI for APIBbuild
++ APIunit, definition of application and environment
+  + logic to automatisation different servers:
+  + local
+  + dev/test
+  + production
+
++ APIcra, scripts to create enironment for app
+    + many different standarisated libraries of shell scripts to create/remove environment
+
++ ProMaGen is UI for APIBbuild, based on manual, or for admins, hi leel management
+  + nodejs
+  + python
+  + js
+
+
+
+Now is possible to executing directly scripts from apicra by promagen, but we need runner and definition to say, what the server
+should do automaticly.
+
 
 It's a background for a APicra Runner preparation with own UI
 

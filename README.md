@@ -66,14 +66,25 @@ W przypaku uzycia wersji standalone
 
 USE APIbuild based on APIunit definition create enironment by APIcra scripts
 
-+ APIbuild, runner is executing APIcra based on APIunit definition
++ APIbuild,
+ Basically, Build is the process of creating the application program for a software release, by taking all the relevant source code files and compiling them and then creating a build artifacts, such as binaries or executable program, etc.
+  + here will be generated many different version of many enironment to binary
+  + mixin environment and source code:
+    + APIunit definition
+    + Apicra script
+    + Apiexec runner
+    + source code app
+
+
++ APIexec, executor/runner is executing APIcra based on APIunit definition
   + is using scripts to execute commands by ProMaGen library
-  + based on
+  + APIexec is library based on
     + python
     + fastapi openapi
     + generated sdk
     + documentation
-  + docs
+  + docs, is possible to run in any language, bash scripts, using actually infrastructure
+
 
 + APIunit, definition of application and environment
   + logic to automatisation different servers:
@@ -82,11 +93,11 @@ USE APIbuild based on APIunit definition create enironment by APIcra scripts
   + production
 
 
-+ APIcra, scripts to create enironment for app
++ APIcra, scripts to create enironment for some source code app
     + many different standarisated libraries of shell scripts to create/remove environment
 
 
-+ ProMaGen is UI for APIbuild, based on manual, or for admins, hi leel management
++ ProMaGen is UI for APIexec, based on manual, or for admins, hi leel management
   + nodejs
   + python
   + js

@@ -1,5 +1,10 @@
 # ProMaGen ONE
 scripts for one project in one folder
+
++ [ECOSYSTEM](ECOSYSTEM.md)
++ [APIEXEC](APIEXEC.md)
++ [WINDOW](WINDOW.md)
+
 https://github.com/promagen/one.git
 
     git clone https://github.com/promagen/one.git one
@@ -58,111 +63,19 @@ W przypaku uzycia wersji standalone
     + python
     + go
 
+## How to install
 
 
-
-## TODO a ecosystem
-
-
-USE APIbuild based on APIunit definition create enironment by APIcra scripts
-
-+ APIbuild,
- Basically, Build is the process of creating the application program for a software release, by taking all the relevant source code files and compiling them and then creating a build artifacts, such as binaries or executable program, etc.
-  + here will be generated many different version of many enironment to binary
-  + mixin environment and source code:
-    + APIunit definition
-    + Apicra script
-    + Apiexec runner
-    + source code app
-
-
-+ APIexec, executor/runner is executing APIcra based on APIunit definition
-  + is using scripts to execute commands by ProMaGen library
-  + APIexec is library based on
-    + python
-    + fastapi openapi
-    + generated sdk
-    + documentation
-  + docs, is possible to run in any language, bash scripts, using actually infrastructure
-
-
-+ APIunit, definition of application and environment
-  + logic to automatisation different servers:
-  + local
-  + dev/test
-  + production
-
-
-+ APIcra, scripts to create enironment for some source code app
-    + many different standarisated libraries of shell scripts to create/remove environment
-
-
-+ ProMaGen is UI for APIexec, based on manual, or for admins, hi leel management
-  + nodejs
-  + python
-  + js
-
-
-vodAPI
-+ api ecosystem
-
-vodAPP
-+ cloud for app
-
-
-Now is possible to executing directly scripts from apicra by promagen, but we need runner and definition to say, what the server
-should do automaticly.
-
-
-It's a background for a APicra Runner preparation with own UI
-
-preparing ProMaGen as library on npmjs
-and submodules as library to import for:
-
-+ one / multi
-    + server
-    + desktop (electron)
-
-+ Create Python version of library and service API, based on FastAPI + frontend on vue, or simple JS with jLoads
-  + API models
-  + Requests
-    + list of projects
-    + list of files in project folder
-    + execute script
-    + get result
-    + get list of history commands
-    + credentials and auth
-
-+ Create SDK based on OpenAPI for many languages to call it by API
-+ Create Vue JS application and Jquery/JS app on frontend to use APIwith SDK generated from OpenApi
-
-
-
-
-
-## Linux
+### Linux
 copy the executable file from /bin folder to another, your project folder and execute
 
     /bin/app
 
-## Windows
+### Windows
 copy the executable file from /bin folder to another, your project folder and execute
 
     /bin/app.exe
 
-## TODO
-+ user path
-+ current path
-+ scan the popular path and load if exist
-+ check, which type of script extension is:
-    + sh / bat
-    + php
-    + py
-
-Use as installer to another application
-+ nodejs
-+ php composer
-+ java maven
 
 # FOR Developers
 
@@ -182,138 +95,6 @@ Start
 
     node promagen.js
 
-
-## compiling code with nexe
-https://github.com/nexe/nexe
-
-## install nexe
-win
-    npm i nexe -g
-
-linux
-
-    sudo npm i nexe -g
-
-compile
-
-    nexe app.js
-    nexe promagen.js --build
-    nexe -i promagen.js --build -o promagen.exe -r 1.0.1 --verbose
-
-    nexe --build -o promagen -r "./views/**/*" -r "./src/**/*" -r "./public/**/*" --verbose
-    nexe .\promagen.js --build -o promagen.exe --verbose
-
-
-## Alternative
-
-https://github.com/frankhale/electron-with-express
-
-
-
-## Wix toolset
-https://github.com/wixtoolset
-https://github.com/wixtoolset/wix3/releases/tag/wix3112rtm
-
-
-## nasm repair
-
-download:
-https://www.nasm.us/pub/nasm/releasebuilds/2.14rc16/win64/nasm-2.14rc16-installer-x64.exe
-
-    start /wait nasm.exe /Spython
-    ps: $env:path="C:\Program Files\nasm;$($env:path)"
-
-## Electron
-https://github.com/electron/simple-samples/blob/master/prices/package.json
-
-    npm install electron-builder --save-dev
-
-    npm i -g electron-builder
-
-remove files
-
-    rm dist
-
-generate
-
-    npm run dist
-
-
-### Electron package module
-https://github.com/Urucas/electron-packager-interactive
-
-    npm install -g electron-packager-interactive
-
-### packager
-https://www.npmjs.com/package/electron-packager
-
-    electron-packager .
-
-## Electron pack
-https://medium.com/jstack-eu/using-electron-with-react-and-node-b498fbf23272
-
-    npm run electron-pack
-    electron-builder -c.extraMetadata.main='./app.js'
-
-### Builder
-https://stackoverflow.com/questions/36515099/how-to-package-an-electron-app-into-a-single-executable
-electron-builder
-
-    electron-builder --publish --win
-
-stworzenie instalatora w folderze dist
-
-    electron-builder --win
-
-# install build dependency modules
-    npm install nan
-    npm install node-gyp
-
-### electron logs
-
-    npm i electron-log
-
-### Electron with boxedapp
-https://www.boxedapp.com/boxedapppacker/usecases/pack_node_webkit_app_into_single_exe.html
-
-
-
-
-# Pack the Files with BoxedApp
-https://www.boxedapp.com/boxedapppacker/usecases/pack_electron_app_into_single_exe.html
-![https://www.boxedapp.com/assets/img/usecases/pack_electron_app_into_single_exe/input_is_electron_exe.png](https://www.boxedapp.com/assets/img/usecases/pack_electron_app_into_single_exe/input_is_electron_exe.png)
-
-Download BoxedApp Packer and run it. Select electron.exe as the input exe and specify the output exe path as you want (you can change the output name).
-
-As you know, one needs to pass the folder name of the electron app to electron.exe in order to run it:
-
-    > electron.exe file-explorer
-
-That's why one should also click "Override command line" and then type:
-
-    <BoxedAppVar:OldCmdLine> file-explorer
-
-on the screen that appears. It means then when someone runs the output exe, it runs it as if "file-explorer" was passed as an argument.
-
-Click Application Directory, then click Add Files..., select all the electron binaries (except electron.exe), and add them.
-
-Then click Import Directory... and first select "file-explorer" and then "locales" and, finally, "resources".
-
-Build it and run. It works!
-
-
-
-
-## Carlo
-https://github.com/GoogleChromeLabs/carlo
-
-This will allow you to launch the locally installed Chrome as a shell that can connect to a locally running server application. It does require a local chrome, but is very close to what was asked for.
-
-The approach encouraged by Carlo should be well suited for Progressive Web Apps. Developers looking for full capabilities for desktop applications are likely to continue leveraging Electron.
-
-Electron is the current leader in providing tools for creating desktop applications with web technologies. In contrast to Electron, Carlo does not attempt to bundle a specific version of Chrome and Node.js together, but instead relies on whichever version of Chrome is installed on an end user's computer.
-
-Carlo does not provide capabilities for making true desktop application alternatives such as changing the name, menu, or icon of the browser view. Instead, Carlo is more akin to running an application in a local application server and automating the viewing of that application within Chrome.
 
 
 ## Shell execute file

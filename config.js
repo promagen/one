@@ -30,6 +30,7 @@ module.exports = function () {
 
         // web server port
         port: 3001,
+        testurl: 'http://localhost:8080',
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits

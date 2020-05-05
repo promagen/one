@@ -14,20 +14,6 @@ function RunCmdPar(filename, query, res) {
     //path.basename('/foo/bar/baz/asdf/quux.html')
     var dir = path.dirname(filename);
 
-    if (!which('docker')) {
-        info = 'Sorry, this script requires DOCKER';
-        console.log(info);
-        echo(info);
-        exit(1);
-    }
-
-    if (!which('docker-compose')) {
-        info = 'Sorry, this script requires DOCKER';
-        console.log(info);
-        echo(info);
-        exit(1);
-    }
-
     var stdout = '';
 
     // var partition = 'e:';

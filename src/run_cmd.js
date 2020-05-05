@@ -20,6 +20,7 @@ function RunCmd(filename, dir, localConfig, res) {
 
     //path.basename('/foo/bar/baz/asdf/quux.html')
 
+/*
     if (!which('docker')) {
         info = 'Sorry, this script requires DOCKER';
         console.log(info);
@@ -33,6 +34,7 @@ function RunCmd(filename, dir, localConfig, res) {
         echo(info);
         exit(1);
     }
+    */
 
     var stdout = '';
     // if(dir.length > 1){

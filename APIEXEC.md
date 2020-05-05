@@ -2,6 +2,10 @@
 
 library supported on nodejs, python, php for executing shell scripts
 
+packages in github
+https://github.com/orgs/APIexec/packages
+
+
 ## TODO system
 
 preparing ProMaGen as library on npmjs

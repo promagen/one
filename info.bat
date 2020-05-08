@@ -1,4 +1,3 @@
-#!/bin/bash
 @echo off
 if not exist *.bat (
 echo This directory contains no *.bat files.

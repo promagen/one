@@ -1,4 +1,4 @@
-@echo off
+@ECHO OFF
 if not exist *.bat (
 echo This directory contains no *.bat files.
 ) else (

@@ -1,3 +1,4 @@
+@ECHO OFF
 echo I will start NODEJS serverfor this project ...
 WHERE node
 IF %ERRORLEVEL% NEQ 0 (

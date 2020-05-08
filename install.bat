@@ -1,4 +1,4 @@
-@echo off
+@ECHO OFF
 echo I will install NPM packages on this project ...
 WHERE npm
 IF %ERRORLEVEL% NEQ 0 (

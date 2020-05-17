@@ -47,7 +47,7 @@ module.exports = function () {
             'url': 'project/private/' + 0,
             'title': 'Current Folder',
             'volume': '',
-            'path': '../',
+            'path': './',
             'domain': 'localhost',
             'files': []
         }]

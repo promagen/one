@@ -14,7 +14,10 @@ console.log('config.js dirname:', __dirname);
 
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('promagen.json');
+let rawdata = fs.readFileSync('../promagen.json');
+// if not exist read internal
+//let rawdata = fs.readFileSync('promagen.json');
+
 let projectList = JSON.parse(rawdata);
 console.log(projectList);
 

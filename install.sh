@@ -1,10 +1,15 @@
 #!/bin/bash
 echo "I will install NPM packages on this project ..."
-project_root=$(dirname $(dirname $(dirname $(realpath $0 ))))
-echo $project_root
+echo $0
 
-data_dir="$project_root/examples/data"
-echo "DATA: $data_dir"
+full_path=$(realpath $0)
+echo $full_path
+
+dir_path=$(dirname $full_path)
+echo $dir_path
+
+examples=$(dirname $dir_path )
+echo $examples
 
 which npm
 if [ $? -eq 0 ]

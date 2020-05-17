@@ -14,7 +14,8 @@ console.log('config.js dirname:', __dirname);
 
 const fs = require('fs');
 
-var config_path = '../promagen.json';
+//var config_path = '../promagen.json';
+var config_path = 'promagen.json';
 
 resolve = require('path').resolve
 config_path = resolve(config_path)

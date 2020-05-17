@@ -2,9 +2,8 @@
 echo "I will install NPM packages on this project ..."
 
 full_path=$(realpath $0)
-#echo $full_path
 dir_path=$(dirname $full_path)
-echo $dir_path
+#echo $dir_path
 
 which npm
 if [ $? -eq 0 ]

@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "I will install NPM packages on this project ..."
-WHERE npm
+which npm
 if [ $? -eq 0 ]
 then
   npm install

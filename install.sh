@@ -3,6 +3,7 @@ echo "I will install NPM packages on this project ..."
 which npm
 if [ $? -eq 0 ]
 then
+  ls -la
   npm install
 #echo "The script ran ok"
   exit 0

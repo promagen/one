@@ -1,5 +1,4 @@
 #!/bin/bash
-@ECHO OFF
 echo "I will install NPM packages on this project ..."
 WHERE npm
 if [ $? -eq 0 ]

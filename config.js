@@ -14,7 +14,13 @@ console.log('config.js dirname:', __dirname);
 
 const fs = require('fs');
 
-let rawdata = fs.readFileSync('../promagen.json');
+var config_path = '../promagen.json';
+
+resolve = require('path').resolve
+config_path = resolve(config_path)
+console.log('config_path',config_path);
+
+let rawdata = fs.readFileSync(config_path);
 // if not exist read internal
 //let rawdata = fs.readFileSync('promagen.json');
 

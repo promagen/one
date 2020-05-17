@@ -6,9 +6,8 @@ var getShFileList = function (path, callback) {
 
     fsPath.find(path, function (filepath, stats, filename) {
         console.log('getShFileList.filename:', filename);
-        // console.log();
-
         if (stats === 'file' && /\.sh/.test(filename)) {
+            console.log(filename);
             return true;
         }
         return false;

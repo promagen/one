@@ -6,9 +6,8 @@ var getBatFileList = function (path, callback) {
 
     fsPath.find(path, function (filepath, stats, filename) {
         console.log('getBatFileList.path:', filename);
-
         if (stats === 'file' && /\.bat/.test(filename)) {
-            // console.log(filename);
+            console.log(filename);
             return true;
         }
         return false;

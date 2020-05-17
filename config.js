@@ -12,7 +12,11 @@ const os_name = os.type();
 // console.log('config.js project_path:', project_path);
 console.log('config.js dirname:', __dirname);
 
+const fs = require('fs');
 
+let rawdata = fs.readFileSync('promagen.json');
+let projectList = JSON.parse(rawdata);
+console.log(projectList);
 
 module.exports = function () {
 
@@ -42,14 +46,6 @@ module.exports = function () {
         isCd: false,
 
         // TODO, path generator, for each path or each folder in one step less
-        projectListPrivate: [
-            {
-            'url': 'project/private/' + 0,
-            'title': 'Current Folder',
-            'volume': '',
-            'path': './',
-            'domain': 'localhost',
-            'files': []
-        }]
+        projectListPrivate: projectList
     }
 };

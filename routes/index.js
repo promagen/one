@@ -8,7 +8,7 @@ var localConfig = new PublicConfig();
 var projectList = require('../src/project_list');
 var title = 'ProMaGen One';
 
-console.log("projectList.private",projectList.private);
+//console.log("projectList.private",projectList.private);
 
 /* GET home page. */
 router.get('/', function (req, res, next) {

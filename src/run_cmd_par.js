@@ -21,14 +21,12 @@ function RunCmdPar(filename, query, res) {
     // var command = 'bash ' + filename;
     var command = filename + ' ' + query;
 
-    console.log('command');
-    console.log(command);
+    console.log('RunCmdPar().command:', command);
 
     // var configs = {};
     // var configs = {silent:true,async:false};
 
-    console.log('dir');
-    console.log(dir);
+    console.log('RunCmdPar().dir', dir);
 
     if (cd(dir).code !== 0) {
         echo('Error: Change DIR failed');
@@ -37,7 +35,7 @@ function RunCmdPar(filename, query, res) {
     try {
 
         var version = exec('node --version', {silent: true}).stdout;
-        console.log(version);
+        console.log('RunCmdPar().version',version);
 
         // var child = exec(command, {async:true});
         // child.stdout.on('data', function(data) {

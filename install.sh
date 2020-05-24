@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "I will install NPM packages on this project ..."
 npm install forever -g
+apt-get install net-tools
 
 full_path=$(realpath $0)
 dir_path=$(dirname $full_path)

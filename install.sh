@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "I will install NPM packages on this project ..."
+npm install forever -g
 
 full_path=$(realpath $0)
 dir_path=$(dirname $full_path)

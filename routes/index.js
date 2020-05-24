@@ -12,7 +12,12 @@ var title = 'ProMaGen One';
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: title, projects: projectList.public, projects_private: projectList.private, testurl: localConfig.testurl});
+    res.render('index', {
+        title: title,
+        projects: projectList.public,
+        projects_private: projectList.private,
+        testurl: localConfig.testurl
+    });
 });
 
 module.exports = router;

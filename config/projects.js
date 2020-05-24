@@ -29,6 +29,7 @@ let rawdata = fs.readFileSync(config_path);
 let projectList = JSON.parse(rawdata);
 console.log(projectList);
 
+// TODO: zrobic 2 rozne ustawienia, bazujace na tej samej bibliotece, ladowane w zaleznosci od kontekstu
 module.exports = function () {
 
     // var dir= '../'
@@ -38,6 +39,8 @@ module.exports = function () {
     // }
 
     return {
+
+        // environment settings: promagen.settings.json
 
         username: 'tomaszsapletta',
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -57,6 +60,7 @@ module.exports = function () {
         isCd: false,
 
         // TODO, path generator, for each path or each folder in one step less
+        // projects list: promagen.projects.json
         projectListPrivate: projectList
     }
 };

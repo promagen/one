@@ -1,4 +1,4 @@
-module.exports = function () {
+module.exports = function (application, domain = 'localhost', port = 3000, public_src = "./") {
 
     const createError = require('http-errors');
     const express = require('express');
@@ -6,10 +6,6 @@ module.exports = function () {
     const cookieParser = require('cookie-parser');
     const logger = require('morgan');
     //const auth = require('./auth');
-
-// CONFIG
-    const PublicConfig = require('../config/projects');
-    var localConfig = new PublicConfig();
 
 //var FileList = [];
     const indexRouter = require('../routes');
@@ -33,7 +29,8 @@ module.exports = function () {
     web.use(express.json());
     web.use(express.urlencoded({extended: false}));
     web.use(cookieParser());
-    var public_path = path.join(__dirname, '../public');
+
+    var public_path = path.join(__dirname, public_src);
     console.log('public_path', public_path);
     web.use(express.static(public_path));
 
@@ -60,7 +57,7 @@ module.exports = function () {
         res.render('error', {title: title});
     });
 
-    web.listen(localConfig.port);
+    web.listen(port);
 
     return web;
 };

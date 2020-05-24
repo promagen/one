@@ -1,7 +1,7 @@
 // Start Express web app based on Express
 
 // CONFIG
-const PublicConfig = require('../config/projects');
+const PublicConfig = require('./config/projects');
 var localConfig = new PublicConfig();
 
 const web = require('./server/web');

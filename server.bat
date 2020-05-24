@@ -4,5 +4,6 @@ WHERE node
 IF %ERRORLEVEL% NEQ 0 (
     echo nodejs is not installed on this system!
 ) else (
-    node server.js
+    ::node server.js
+    forever start server.js
 )

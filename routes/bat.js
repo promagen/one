@@ -4,7 +4,7 @@ var projectList = require('../src/project_list');
 const Run = require('../src/run');
 const RunCmd = require('../src/run_cmd');
 const RunCmdPar = require('../src/run_cmd_par');
-const PublicConfig = require('../config');
+const PublicConfig = require('../config/projects');
 var localConfig = new PublicConfig();
 const path = require('path');
 

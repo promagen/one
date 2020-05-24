@@ -6,7 +6,7 @@ const BrowserWindow = electron.BrowserWindow; // Module to create native browser
 const path = require('path');
 const web = require('./src/web'); // Start Express web app based on Express
 // CONFIG
-const PublicConfig = require('./config');
+const PublicConfig = require('./config/projects');
 var localConfig = new PublicConfig();
 
 

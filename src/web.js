@@ -8,7 +8,7 @@ module.exports = function () {
     //const auth = require('./auth');
 
 // CONFIG
-    const PublicConfig = require('../config');
+    const PublicConfig = require('../config/projects');
     var localConfig = new PublicConfig();
 
 //var FileList = [];

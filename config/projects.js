@@ -14,11 +14,22 @@ console.log('config.js dirname:', __dirname);
 
 const fs = require('fs');
 
-var config_path = '../promagen.json';
-//var config_path = 'promagen.json';
 
-resolve = require('path').resolve
-config_path = resolve(config_path)
+try {
+    var config_path = '../promagen.json';
+    resolve = require('path').resolve
+    config_path = resolve(config_path)
+
+    if (fs.existsSync(config_path)) {
+        console.log("File exists.")
+    } else {
+        console.log("File does not exist.")
+        config_path = 'promagen.json';
+    }
+} catch(err) {
+    console.error(err)
+}
+
 
 console.log('config_path',config_path);
 
@@ -47,7 +58,7 @@ module.exports = function () {
         // project_path: project_path,
 
         // web server port
-        port: 3001,
+        port: 80,
         testurl: 'http://localhost:8080',
 
         // Continuous Integration mode

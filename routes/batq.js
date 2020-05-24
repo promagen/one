@@ -2,7 +2,7 @@ const express = require('express');
 var router = express.Router();
 var projectList = require('../src/project_list');
 var RunCmdPar = require('../src/run_cmd');
-const PublicConfig = require('../config');
+const PublicConfig = require('../config/projects');
 var localConfig = new PublicConfig();
 
 console.log('localConfig.os');

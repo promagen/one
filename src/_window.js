@@ -10,7 +10,7 @@ module.exports = function () {
     const path = require('path');
     const web = require('./web'); // Start Express web app based on Express
 // CONFIG
-    const PublicConfig = require('../config');
+    const PublicConfig = require('../config/projects');
     var localConfig = new PublicConfig();
 
 

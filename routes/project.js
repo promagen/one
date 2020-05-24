@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const PublicConfig = require('../config');
+const PublicConfig = require('../config/projects');
 var localConfig = new PublicConfig();
 var path = require("path");
 

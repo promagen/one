@@ -1,4 +1,4 @@
-const PublicConfig = require('../config');
+const PublicConfig = require('../config/projects');
 var localConfig = new PublicConfig();
 
 var projectList = {

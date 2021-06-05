@@ -1,3 +1,4 @@
+#!/bin/bash
 set URL=http://localhost:3001
 ::set BROWSER=chrome
 set BROWSER=firefox

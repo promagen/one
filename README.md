@@ -22,6 +22,41 @@ https://blog.promagen.com/
 + git, https://gitforwindows.org/
 + nodejs
 
+
+
+
+
+## .apitee
+
+https://github.com/apicra/win-node
+
+https://github.com/apicra/debian-node
+
+    sh .apitee/install
+    
+    sh .apitee/status
+    
+    sh .apitee/update
+
+
+
+## .apibuild
+
+    sh .apibuild/install
+
+
+## .apiexec
+
+    sh .apitee/start
+
+
+## .apicra
+ 
+    sh .apicra/start
+    sh .apicra/browser
+
+
+
 ## Installation on windows
 
 download using git command

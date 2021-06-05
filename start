@@ -1,0 +1,10 @@
+#!/bin/bash
+## .apitee
+sh .apitee/install
+sh .apitee/status
+## .apibuild
+sh .apibuild/install
+## .apiexec
+sh .apitee/start
+## .apicra
+sh .apicra/browser

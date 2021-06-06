@@ -4,6 +4,6 @@
 :: .apibuild
 .apibuild/install.bat
 :: .apiexec
-.apitee/start.bat
+.apiexec/start.bat
 :: .apicra
 .apicra/browser.bat

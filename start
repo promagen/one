@@ -5,6 +5,6 @@ sh .apitee/status
 ## .apibuild
 sh .apibuild/install
 ## .apiexec
-sh .apitee/start
+sh .apiexec/start
 ## .apicra
 sh .apicra/browser
